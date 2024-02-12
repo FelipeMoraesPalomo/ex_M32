@@ -11,7 +11,7 @@ const EstiloGlobal = createGlobalStyle`
 
 export const Container = styled.div`
   padding: 120px;
-  background-color: blue;
   height: 100vh;
+  background-color: #d3d3d3;
 `
 export default EstiloGlobal
