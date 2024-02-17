@@ -11,14 +11,25 @@ const LinhaCadastra = () => {
 
   const dispatch = useDispatch()
 
-  function CadastraContato() {
-    dispatch(
-      cadastrar({
-        name,
-        tel,
-        email
-      })
-    )
+  function cadastra_Verifica_Limpa() {
+    if (name.length < 2) {
+      alert('Digite um nome válido')
+    } else if (tel <= 0) {
+      alert('O número de telefone não pode ser 0')
+    } else if (email.length < 5) {
+      alert('O email deve ter ao menos 5 caracteres.')
+    } else {
+      dispatch(
+        cadastrar({
+          name,
+          tel,
+          email
+        })
+      )
+      setName('')
+      setTel(0)
+      setEmail('')
+    }
   }
 
   return (
@@ -49,7 +60,7 @@ const LinhaCadastra = () => {
         />
       </td>
       <td>
-        <BotaoAdicionar onClick={CadastraContato()} />
+        <BotaoAdicionar onClick={cadastra_Verifica_Limpa} />
       </td>
     </>
   )

@@ -1,5 +1,11 @@
 import { Botao } from './styles'
 
-const BotaoAdicionar = () => <Botao>+</Botao>
+type BotaoAdicionarProps = {
+  onClick?: () => void
+}
+
+const BotaoAdicionar = ({ onClick }: BotaoAdicionarProps) => (
+  <Botao onClick={onClick}>+</Botao>
+)
 
 export default BotaoAdicionar
