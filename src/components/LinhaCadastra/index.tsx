@@ -1,7 +1,12 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { Contato, cadastrar, editar } from '../../store/reducers/contatos'
+import {
+  Contato,
+  cadastrar,
+  editar,
+  remover
+} from '../../store/reducers/contatos'
 import BotaoAdicionar from '../BotaoAdicionar'
 import { Botao } from './styles'
 
@@ -35,6 +40,10 @@ const LinhaCadastra = ({ id, name, tel, email, disabled }: Props) => {
       setTelState(0)
       setEmailState('')
     }
+  }
+
+  function remover_Contato() {
+    dispatch(remover(id))
   }
 
   function verificar_Editar() {
@@ -95,7 +104,12 @@ const LinhaCadastra = ({ id, name, tel, email, disabled }: Props) => {
       </td>
       <td>
         {id === 0 && <BotaoAdicionar onClick={cadastra_Verifica_Limpa} />}
-        {!estaEditando && id != 0 && <Botao onClick={editando}>Editar</Botao>}
+        {!estaEditando && id != 0 && (
+          <>
+            <Botao onClick={editando}>Editar</Botao>{' '}
+            <Botao onClick={remover_Contato}>Remover</Botao>
+          </>
+        )}
         {estaEditando && id != 0 && (
           <>
             <button onClick={verificar_Editar}>SALVAR</button>{' '}
