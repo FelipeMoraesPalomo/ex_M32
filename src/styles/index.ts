@@ -13,5 +13,9 @@ export const Container = styled.div`
   padding: 120px;
   height: 100vh;
   background-color: #d3d3d3;
+
+  button {
+    cursor: pointer;
+  }
 `
 export default EstiloGlobal

@@ -9,5 +9,4 @@ export const Botao = styled.button`
   text-decoration: none;
   font-size: 15px;
   display: inline;
-  cursor: pointer;
 `

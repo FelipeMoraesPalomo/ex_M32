@@ -15,7 +15,7 @@ export const Table = styled.table`
   th,
   td {
     border: 2px solid #000;
-    padding: 4px 0;
+    padding: 8px 0;
 
     input {
       border: none;

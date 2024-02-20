@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux'
 import LinhaCadastra from '../../components/LinhaCadastra'
-import LinhaTabela from '../../components/LinhaTabela'
 import * as S from './styles'
 import { RootReducer } from '../../store'
 
@@ -21,12 +20,18 @@ const Tabela = () => {
 
       <tbody>
         <tr>
-          <LinhaCadastra />
+          <LinhaCadastra id={0} name="" tel={0} email="" />
         </tr>
 
         {contatos.map((c) => (
           <tr key={c.name}>
-            <LinhaTabela id={c.id} name={c.name} tel={c.tel} email={c.email} />
+            <LinhaCadastra
+              id={c.id}
+              name={c.name}
+              tel={c.tel}
+              email={c.email}
+              disabled
+            />
           </tr>
         ))}
       </tbody>
