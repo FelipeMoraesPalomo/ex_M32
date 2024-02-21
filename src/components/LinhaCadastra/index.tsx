@@ -7,7 +7,6 @@ import {
   editar,
   remover
 } from '../../store/reducers/contatos'
-import BotaoAdicionar from '../BotaoAdicionar'
 import { Botao } from './styles'
 
 type Props = Contato

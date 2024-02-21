@@ -8,7 +8,7 @@ const Tabela = () => {
   return (
     <S.Table>
       <S.TituloTabela>Lista de contatos</S.TituloTabela>
-      <S.CabecalhoTabela>
+      <thead>
         <tr>
           <th>ID</th>
           <th>Nome</th>
@@ -16,7 +16,7 @@ const Tabela = () => {
           <th>Email</th>
           <th>Ações</th>
         </tr>
-      </S.CabecalhoTabela>
+      </thead>
 
       <tbody>
         <tr>

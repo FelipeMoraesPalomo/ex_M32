@@ -8,10 +8,6 @@ export const Table = styled.table`
   border-collapse: collapse;
   text-align: center;
 
-  /* tr:nth-child(even) {
-    background: lightgray;
-  } */
-
   th,
   td {
     border: 2px solid #000;
@@ -37,9 +33,4 @@ export const TituloTabela = styled.caption`
   padding: 16px 0px;
   background-color: green;
   font-size: 40px;
-`
-
-export const CabecalhoTabela = styled.thead`
-  tr {
-  }
 `
