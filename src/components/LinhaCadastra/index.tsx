@@ -42,6 +42,14 @@ const LinhaCadastra = ({ id, name, tel, email, disabled }: Props) => {
     }
   }
 
+  function cancelar() {
+    setNameState(name)
+    setEmailState(email)
+    setTelState(tel)
+    setEstaEditando(false)
+    setCampoEstaAtivado(disabled)
+  }
+
   function remover_Contato() {
     dispatch(remover(id))
   }
@@ -103,7 +111,7 @@ const LinhaCadastra = ({ id, name, tel, email, disabled }: Props) => {
         />
       </td>
       <td>
-        {id === 0 && <BotaoAdicionar onClick={cadastra_Verifica_Limpa} />}
+        {id === 0 && <Botao onClick={cadastra_Verifica_Limpa}>Adicionar</Botao>}
         {!estaEditando && id != 0 && (
           <>
             <Botao onClick={editando}>Editar</Botao>{' '}
@@ -112,8 +120,8 @@ const LinhaCadastra = ({ id, name, tel, email, disabled }: Props) => {
         )}
         {estaEditando && id != 0 && (
           <>
-            <button onClick={verificar_Editar}>SALVAR</button>{' '}
-            <button>Cancelar</button>
+            <Botao onClick={verificar_Editar}>SALVAR</Botao>{' '}
+            <Botao onClick={cancelar}>Cancelar</Botao>
           </>
         )}
       </td>
